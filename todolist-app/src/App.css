@@ -1,0 +1,59 @@
+.header {
+  font-family: "Hi Melody", cursive;
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.inputform {
+  max-width: 500px;
+  display: flex;
+  margin: 10px auto;
+}
+
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #ef9a9a !important;
+  box-shadow: 0 1px 0 0 #ef9a9a !important;
+}
+
+.btn {
+  font-family: "Hi Melody", cursive;
+  font-size: 1rem;
+}
+
+/*to-do list item*/
+.todolistitem-container {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.item-text {
+  font-family: "Hi Melody", cursive;
+  font-size: 1.5rem;
+  min-width: 500px;
+  text-align: center;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ef9a9a;
+}
+
+.check-btn,
+.delete-btn {
+  color: #ef9a9a;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+.check-btn:focus {
+  background-color: transparent;
+}
+.delete-btn:focus {
+  background-color: transparent;
+}
+
+.completed {
+  text-decoration: line-through;
+}
