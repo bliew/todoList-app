@@ -1,5 +1,6 @@
-import React from "react";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { toast } from 'react-toastify';
 
 const InputTodo = ({ todos, setTodos, inputText, setInputText }) => {
   let id = uuidv4(); //generate random id
@@ -11,11 +12,15 @@ const InputTodo = ({ todos, setTodos, inputText, setInputText }) => {
 
   const submitHandler = (e) => {
     e.preventDefault(); //prevents page from refreshing
-    setTodos([
-      ...todos, //keep all previous todos
-      { text: inputText, completed: false, id }, //update value if input is new
-    ]);
-    setInputText(""); //set inputText to empty to delete what you have typed into the bar
+    if (inputText) {
+      setTodos([
+        ...todos, //keep all previous todos
+        { text: inputText, completed: false, id }, //update value if input is new
+      ]);
+    } else {
+      toast.error('Must provide a todo list item');
+    }
+    setInputText(''); //set inputText to empty to delete what you have typed into the bar
   };
 
   return (
